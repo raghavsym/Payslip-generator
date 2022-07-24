@@ -69,9 +69,9 @@ To app directory and run these commands:
 └── .eslintrc.json
 ```
 ## Running the API
-URL - http://localhost:3000/v1/payslip
-Method - POST
-Body - {
+- URL - http://localhost:3000/v1/payslip
+- Method - POST
+- Body - {
     "firstName": "Andrew",
     "lastName": "Smith",
     "annualSalary": 60050,
@@ -91,6 +91,6 @@ If you want to add some new variables, you also need to add them to interface an
 # Payslip-generator
 Screen shots are attached.
 
-Assumption1 - Taking input as a body of POST API - http://localhost:3000/v1/payslip
-Assumption2 - If year is not given then assuming current on going year and getting tax bracket from default.
-Assumption3 - If year is given then getting corresponding tax bracket for the same year.
+- Assumption1 - Taking input as a body of POST API - http://localhost:3000/v1/payslip
+- Assumption2 - If year is not given then assuming current on going year and getting tax bracket from default.
+- Assumption3 - If year is given then getting corresponding tax bracket for the same year.
