@@ -1,11 +1,8 @@
 import * as express from 'express';
 import * as http from 'http';
 import * as path from 'path';
-import * as swaggerJSDoc from 'swagger-jsdoc';
-import * as swaggerUi from 'swagger-ui-express';
 import PayslipRouter from './PayslipRoutes';
 
-const swaggerDef = require('../../swaggerDef');
 
 /**
  * @export
@@ -20,15 +17,6 @@ export function init(app: express.Application): void {
      * @constructs
      */
     app.use('/v1/payslip', PayslipRouter);
-
-    /**
-     * @description
-     * @constructs
-     */
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerJSDoc({
-        swaggerDefinition: swaggerDef,
-        apis: [path.join(__dirname, '../../src/**/**/*.ts')],
-    })));
 
     /**
      * @description No results returned mean the object is not found

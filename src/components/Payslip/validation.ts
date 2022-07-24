@@ -32,8 +32,8 @@ class PayslipValidation {
     .custom((obj)=>{
         if(obj && obj.dateRange){
             let date = obj.dateRange.split('-');
-            let startDate = date && date[0] && momemt(date[0]);
-            let endDate = date && date[1] && momemt(date[1]);
+            let startDate = date && date[0] && momemt(new Date(date[0]));
+            let endDate = date && date[1] && momemt(new Date(date[1]));
             let currentDate = new Date();
 
             if(startDate && !startDate.isValid()){
@@ -54,10 +54,10 @@ class PayslipValidation {
             if((momemt(startDate).month() !== momemt(endDate).month())){
                 throw new Error('month should be same.');
             }
-            if((momemt(date[1], 'DD MMM YYYY').year() !== momemt(date[0], 'DD MMM YYYY').year())){
+            if((momemt(new Date(date[1]), 'DD MMM YYYY').year() !== momemt(new Date(date[0]), 'DD MMM YYYY').year())){
                 throw new Error('year should be same.');
             }
-            if((momemt(currentDate).month() + 1 === momemt(startDate).month() + 1) && (momemt(currentDate).year() === momemt(date[0], 'DD MMM YYYY').year())){
+            if((momemt(currentDate).month() + 1 === momemt(startDate).month() + 1) && (momemt(currentDate).year() === momemt((date[0]), 'DD MMM YYYY').year())){
                 throw new Error('Current month has not completed yet. Please try with previous months.');
             }
         }
