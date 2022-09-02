@@ -90,7 +90,3 @@ In root folder you can find `.env`. You can use this config or change it for you
 If you want to add some new variables, you also need to add them to interface and config object (Look `src/config/index.ts`)
 # Payslip-generator
 Screen shots are attached.
-
-- Assumption1 - Taking input as a body of POST API - http://localhost:3000/v1/payslip
-- Assumption2 - If year is not given then assuming current on going year and getting tax bracket from default.
-- Assumption3 - If year is given then getting corresponding tax bracket for the same year.
